@@ -1,14 +1,28 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <title><%= @title %></title>
-</head>
-<body>
-  <h3>Welcome to Dynamo!</h3>
-  <ol>
-    <li>Change this template at <code>web/templates/index.html.eex</code></li>
-    <li>Add new routes at <code>web/routers/application_router.ex</code></li>
-    <li>Deploy to production with <code>MIX_ENV=prod mix do compile, server</code></li>
-  </ol>
-</body>
-</html>
+<% content_for :title do %>
+  Welcome to Sparky Chat!
+<% end %>
+
+<h1><%= @header %></h1>
+
+<h2><%= @user %></h2>
+
+<div class="row-fluid" id="users" data-users="<%= h(@user) %>">
+  <div class="span12">
+    <form class="form-horizontal" id="sign-up">
+      <div class="control-group">
+      	<div class="controls">
+      	  <input class="input-xxlarge" name="user[username]" id="user_username" placeholder="Enter username here" type="text">
+      	  <input type="submit" value="Sign up!" class="btn"/>
+      	</div>
+      </div>
+  </form>
+
+  <div class="users-container">
+  	<h3>Users</h1>
+  	<div class="users" id="registered-users">
+  	  <%= lc n inlist @users_json do %>
+  		<p><%= n[:username] %></p>
+  	  <% end %>
+  	</div>
+  </div>
+</div>

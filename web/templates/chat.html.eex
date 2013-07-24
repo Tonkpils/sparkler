@@ -1,0 +1,24 @@
+<% content_for :title do %>
+  Sparky Chat
+<% end %>
+
+<h1>Welcome <%= @username %></h1>
+<div class="container">
+
+	<div id="chat-area" class="chat-box">
+	  <!-- <p><%= @username %>: <%= @message %></p> -->
+	</div>
+	<form action="/chat/message" method="post">
+	  <input type="text" placeholder="Enter a message" name="message">
+	  <input type="submit">
+	</form>
+
+	<form action="/users/sign_out" method="post">
+		<input type="submit" value="Sign out"> 	
+	</form>
+
+	<p><%= @conn_list %></p>
+</div>
+
+
+<script src="/static/chat.js"></script>

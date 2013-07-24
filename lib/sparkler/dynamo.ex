@@ -13,14 +13,14 @@ defmodule Sparkler.Dynamo do
 
     # The route from where static assets are served
     # You can turn off static assets by setting it to false
-    static_route: "/static"
+    static_route: "/"
 
   # Uncomment the lines below to enable the cookie session store
-  # config :dynamo,
-  #   session_store: Session.CookieStore,
-  #   session_options:
-  #     [ key: "_sparkler_session",
-  #       secret: "EMaxx7U/NQ1VBBxDCJC5GD5HqudqHed4Y6cKySWDBFaPoIZkN268qbrGXIuYDu20"]
+  config :dynamo,
+    session_store: Session.CookieStore,
+    session_options:
+      [ key: "_sparkler_session",
+        secret: "EMaxx7U/NQ1VBBxDCJC5GD5HqudqHed4Y6cKySWDBFaPoIZkN268qbrGXIuYDu20"]
 
   # Default functionality available in templates
   templates do

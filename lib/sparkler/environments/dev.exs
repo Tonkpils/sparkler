@@ -17,5 +17,10 @@ config :dynamo,
   # in development
   exceptions_handler: Exceptions.Debug
 
+initializer :dynamo do
+  Mongoex.Server.setup(address: 'localhost', port: 27017, database: :sparky, pool: 4)
+  Mongoex.Server.start
+end
+
 # Run on port 4000 for development
 config :server, port: 4000

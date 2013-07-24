@@ -1,6 +1,11 @@
-[ "cowboy": {:git, "git://github.com/extend/cowboy.git", "6e33274c852f60eccbdc610b0525c3541d36aa89", []},
+[ "bson": {:git, "git://github.com/mongodb/bson-erlang", "6d3cc910eac6d4c21402427b41c411e201eca424", [{:ref, "HEAD"}]},
+  "cowboy": {:git, "git://github.com/extend/cowboy.git", "6e33274c852f60eccbdc610b0525c3541d36aa89", []},
   "dynamo": {:git, "git://github.com/elixir-lang/dynamo.git", "fde1fc029300db097f5e165679036d49cee8678e", []},
   "ex_doc": {:git, "https://github.com/elixir-lang/ex_doc.git", "4bc1e9af619fd98e51479cbe09157ff831b0d4e1", []},
   "hackney": {:git, "git://github.com/benoitc/hackney.git", "6f9b403602371bc3d4aa0b67b1e253b105075bcf", []},
+  "jsonex": {:git, "git://github.com/devinus/jsonex.git", "b623538e836d0623b73d9492fa8c254870adc3cc", []},
+  "jsx": {:git, "git://github.com/talentdeficit/jsx.git", "352d6b21cbec4fe1b66bc7ce3ded67a3b32add2c", []},
   "mimetypes": {:git, "git://github.com/spawngrid/mimetypes.git", "e9dfab5aec98963589ecf13bdfcf0490667a730d", []},
+  "mongodb": {:git, "git://github.com/mururu/mongodb-erlang.git", "4c640620bf2ab82d9be85d527a229cd6b60a4c02", []},
+  "mongoex": {:git, "git://github.com/mururu/mongoex.git", "4bd4d8e5bb35f48fb1244ac044dc46c896686822", []},
   "ranch": {:git, "git://github.com/extend/ranch.git", "935c7c94673027c3940a771c6e8b32f77152f1c9", [{:ref, "0.8.2"}]} ]
