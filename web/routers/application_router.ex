@@ -26,7 +26,12 @@ defmodule ApplicationRouter do
 
   forward "/users", to: UserRouter
   
+
   get "/" do    
+    if conn.assigns[:current_user] do
+      redirect!(conn, to: "/users/#{conn.assigns[:current_user].username}")
+    end
+
     conn = conn.assign(:title, "Welcome to Sparky Chat on Dynamo!")
     conn = conn.assign(:header, "Sparky Chat!")
 

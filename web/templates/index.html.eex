@@ -1,31 +1,20 @@
-<% content_for :title do %>
-  Welcome to Sparky Chat!
-<% end %>
+<div class="jumbotron">
+  <div class="container">
+      <h1>Welcome To Sparkler on Dynamo</h1>
+      <form role="form" id="sign-up" action="users" method="post">
+        <div class="input-group">
+          <input type="text" class="form-control" name="user[username]" id="user_username" placeholder="Enter username here">
+          <span class="input-group-btn">
+            <button class="btn btn-default btn-group">Sign up!</button>
+          </span>
 
-<h1><%= @header %></h1>
-
-<%= if @current_user do %>
-  <h2><%= @current_user.username %></h2>
-<% end %>
-<div class="row-fluid" id="users" data-users="<%= h(@user) %>">
-  <div class="span12">
-    <%= unless @current_user do %>
-      <form class="form-horizontal" id="sign-up">
-        <div class="control-group">
-        	<div class="controls">
-        	  <input class="input-xxlarge" name="user[username]" id="user_username" placeholder="Enter username here" type="text">
-        	  <input type="submit" value="Sign up!" class="btn"/>
-        	</div>
         </div>
-      </form>
-    <% end %>
 
-  <div class="users-container">
-  	<h3>Users</h1>
-  	<div class="users" id="registered-users">
-  	  <%= lc n inlist @users_json do %>
-  		<p><%= n[:username] %></p>
-  	  <% end %>
-  	</div>
+      </form>
+
   </div>
+
 </div>
+
+
+

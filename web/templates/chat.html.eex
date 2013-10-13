@@ -2,23 +2,30 @@
   Sparky Chat
 <% end %>
 
-<h1>Welcome <%= @username %></h1>
 <div class="container">
-
-	<div id="chat-area" class="chat-box">
-	  <!-- <p><%= @username %>: <%= @message %></p> -->
+	<div class="row">
+		<div class="col-md-4">
+		  <h1><%= "Welcome #{@current_user.username}" %></h1>
+		</div>
+		<div class="col-md-8">
+		  <h2>Done!</h2>
+		</div>
 	</div>
-	<form action="/chat/message" method="post">
-	  <input type="text" placeholder="Enter a message" name="message">
-	  <input type="submit">
-	</form>
 
-	<form action="/users/sign_out" method="post">
-		<input type="submit" value="Sign out"> 	
-	</form>
+	<div class="row">
+		<div class="col-md-12">
+			<div id="chat-area" class="chat-box">
+			  <p>Test: Test</p>
+			</div>
+			<form action="/chat/message" method="post">
+			  <input type="text" placeholder="Enter a message" name="message">
+			  <input type="submit">
+			</form>
 
-	<p><%= @conn_list %></p>
+			<form action="/users/sign_out" method="post">
+				<input type="submit" value="Sign out"> 	
+			</form>
+		</div>
+	</div>
 </div>
-
-
-<script src="/static/chat.js"></script>
+<script src="/js/chat.js"></script>
