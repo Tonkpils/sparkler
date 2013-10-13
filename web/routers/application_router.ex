@@ -1,11 +1,21 @@
 defmodule ApplicationRouter do
   use Dynamo.Router
 
+  import Dynamo.HTTP.Cookies
+
   prepare do
     # Pick which parts of the request you want to fetch
     # You can comment the line below if you don't need
     # any of them or move them to a forwarded router
-    conn.fetch([:cookies, :params, :session])
+    conn = conn.fetch([:cookies, :params, :session])
+    username = get_cookie(conn, :username)
+
+    if username do
+      case User.find({:username, get_cookie(conn, :username)}) do
+        nil -> nil
+        current_user -> conn = conn.assign(:current_user, current_user)
+      end
+    end
 
     conn.assign :layout, "application"
   end
@@ -16,15 +26,13 @@ defmodule ApplicationRouter do
 
   forward "/users", to: UserRouter
   
-  get "/" do
+  get "/" do    
     conn = conn.assign(:title, "Welcome to Sparky Chat on Dynamo!")
     conn = conn.assign(:header, "Sparky Chat!")
 
+    user_streamed = User.find_all({}) 
+                      |> Stream.map(fn(user) -> [id: user.id, username: user.username] end)
 
-    user_streamed = User.find_all({}) |> Stream.map(fn(user) -> 
-                                                      [id: user.id, username: user.username] 
-                                                    end)
-    #users_json = JSON.encode(Enum.to_list(user_streamed))
     user_list = Enum.to_list(user_streamed)
 
     conn = conn.assign(:users_json, user_list)

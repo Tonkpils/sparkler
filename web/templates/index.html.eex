@@ -4,18 +4,21 @@
 
 <h1><%= @header %></h1>
 
-<h2><%= @user %></h2>
-
+<%= if @current_user do %>
+  <h2><%= @current_user.username %></h2>
+<% end %>
 <div class="row-fluid" id="users" data-users="<%= h(@user) %>">
   <div class="span12">
-    <form class="form-horizontal" id="sign-up">
-      <div class="control-group">
-      	<div class="controls">
-      	  <input class="input-xxlarge" name="user[username]" id="user_username" placeholder="Enter username here" type="text">
-      	  <input type="submit" value="Sign up!" class="btn"/>
-      	</div>
-      </div>
-  </form>
+    <%= unless @current_user do %>
+      <form class="form-horizontal" id="sign-up">
+        <div class="control-group">
+        	<div class="controls">
+        	  <input class="input-xxlarge" name="user[username]" id="user_username" placeholder="Enter username here" type="text">
+        	  <input type="submit" value="Sign up!" class="btn"/>
+        	</div>
+        </div>
+      </form>
+    <% end %>
 
   <div class="users-container">
   	<h3>Users</h1>

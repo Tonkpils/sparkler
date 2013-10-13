@@ -5,5 +5,5 @@
   "json": {:git, "git://github.com/cblage/elixir-json.git", "9bac6d4767170bc71b91b8548d8dc8eb19fa938a", []},
   "mimetypes": {:git, "git://github.com/spawngrid/mimetypes.git", "47d37a977a7d633199822bf6b08353007483d00f", []},
   "mongodb": {:git, "git://github.com/mururu/mongodb-erlang.git", "4c640620bf2ab82d9be85d527a229cd6b60a4c02", []},
-  "mongoex": {:git, "git://github.com/Tonkpils/mongoex.git", "8ebab6b9cca27cd54685865dd8ab9373504cb2ad", []},
+  "mongoex": {:git, "git://github.com/mururu/mongoex.git", "8ebab6b9cca27cd54685865dd8ab9373504cb2ad", []},
   "ranch": {:git, "git://github.com/extend/ranch.git", "41705752ffc7e3ecb96eef8374015ead4ca7f699", [{:ref, "0.8.5"}]} ]

@@ -20,7 +20,7 @@ defmodule Sparkler.Mixfile do
   defp deps do
     [ { :cowboy, github: "extend/cowboy" },
       { :dynamo, github: "elixir-lang/dynamo" },
-      { :mongoex, "0.0.1", github: "Tonkpils/mongoex" },
+      { :mongoex, "0.0.1", github: "mururu/mongoex" },
       { :json, github: "cblage/elixir-json" }
     ]
   end

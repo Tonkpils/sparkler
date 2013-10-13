@@ -13,7 +13,10 @@ $(function() {
   	  caller: this,
   	  success: function(data) {
   	  	$('#registered-users').append('<p>' + data.username + '</p>');
-  	  }
+  	  },
+      error: function(data) {
+        alert("Error: " + data.responseJSON.error);
+      }
   	});
   });
 });
